@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "configure",
+            "program": "bash",
+            "args": ["-c", "mkdir -p build && cd build && cmake .. -G Ninja"],
+        },
+        {
+            "type": "command",
+            "name": "build",
+            "program": "ninja",
+            //"workingDir": "$PROJECT_DIR$",
+            "workingDir": "./build",
+        },
+        {
+            "type": "command",
+            "name": "run",
+            "program": "./pcp",
+            //"workingDir": "$PROJECT_DIR$",
+            "dependsOn": ["build"],
+            "workingDir": "./build",
+        },
+    ]
+}
