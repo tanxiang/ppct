@@ -8,6 +8,6 @@ int main(int argc, char *argv[]) {
   torch::Device device(torch::kHIP);
   ALOG(MSG) << device.is_hip();
   torch::data::datasets::MNIST data{"./mnist"};
-
+  
   return 0;
 }
